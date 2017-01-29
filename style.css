@@ -1,0 +1,42 @@
+body {
+  background: #c7c9cc;
+}
+
+h1 {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+
+}
+
+.hangman {
+  border: 1px solid black;
+  height: 600px;
+  width: 600px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.board{
+  flex-wrap: wrap;
+  flex-direction: row;
+  border: 1px solid black;
+  height: 600px;
+  width: 600px;
+  display: flex;
+  justify-content: flex-start;
+
+}
+
+
+}
+
+input {
+  height: 50px;
+  width: 70px;
+
+
+}
