@@ -1,14 +1,17 @@
 body {
-  background: #c7c9cc;
+  background: #c2c8d1;
 }
 
 h1 {
   text-align: center;
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
 }
 
 .container {
   display: flex;
   justify-content: center;
+  position: relative;
 
 }
 
@@ -16,27 +19,59 @@ h1 {
   border: 1px solid black;
   height: 600px;
   width: 600px;
-  display: flex;
-  justify-content: flex-start;
+
 }
 
-.board{
-  flex-wrap: wrap;
-  flex-direction: row;
+.guesses{
+  position: relative;
   border: 1px solid black;
   height: 600px;
   width: 600px;
-  display: flex;
-  justify-content: flex-start;
-
 }
 
+.enter-words {
+  position: relative;
+}
+
+.displayLetters {
+  height: 100px;
+  width: 100%;
+  border: 1px solid black;
+  margin: 160px 0px;
+}
+.enter-letters {
+  position: relative;
+  margin-top: 260px;
+}
+
+#letterdashes {
+  color: red;
+  font-size: 20px;
+  text-align: center;
+}
+
+#form1, #form2 {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 
 }
 
 input {
-  height: 50px;
-  width: 70px;
+  height: 20px;
+  width: 100px;
+  padding-left: 10px;
+  border-radius: 8px;
+  font-family: 'Indie Flower', cursive;
 
+}
 
+button {
+  font-size: 14px;
+  height: 25px;
+  width: 60px;
+  border-radius: 4px;
+  background: blue;
+  color: white;
+  font-family: 'Indie Flower', cursive;
 }

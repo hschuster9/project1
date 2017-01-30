@@ -3,19 +3,34 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
     <title>Hangman</title>
   </head>
   <body>
-    <h1>Hangman</h1>
+    <h1>HANGMAN</h1>
     <div class="container">
         <div class="hangman">
 
         </div>
-        <div class="board">
-            <form id="form">
+        <div class="guesses">
+            <div class="enter-words">
+            <form id="form1">
               <input type="text" placeholder="Enter word" id="word"></input>
-              <button id="set-word">Enter</button>
-          </form>
+              <button id="set-word">Sumbit</button>
+            </form>
+          </div>
+            <div class="displayLetters">
+              <p id="letterdashes"></p>
+            </div>
+
+            <div class="enter-letters">
+            <form id="form2">
+              <input type="text" placeholder="Enter letter" id="letter"></input>
+              <button id="guess-letter">Submit</button>
+            </form>
+            </div>
+
+
 
         </div>
 </div>

@@ -9,39 +9,46 @@ function hideWord () {
   var inputValue = $("#word").val();
 //split the letters in word
     console.log(inputValue);
-  var inputValueSplit = inputValue.split("");
-    console.log(inputValueSplit);
-
 //put letters into array
-  var inputValueSplitArray = [inputValueSplit];
+  var inputValueSplitArray = inputValue.split("");
   console.log(inputValueSplitArray);
 
-
-//not working
-
+//replace letters with dashes
   var inputArray = [];
-  for( var i = 0; i < inputValueSplit.length; i++){
-  //inputArray.push("_"));
+  for( var i = 0; i < inputValueSplitArray.length; i++){
   inputArray.push("_");
-    console.log(inputArray[i]);
-
-  }
+}
 console.log(inputArray);
 
-$()
+//display dashes on page
+  $("#letterdashes").text(inputArray.join(' '));
 
-  //replace letters in array with "_" by looping through and changing by indexOf
-  /* question--
-  var inputArray = [];
-    for (var i = 0; i < inputValueSplitArray.length; i++){
-          inputValueSplitArray[i].replace([i], "_");
-        console.log(inputArray[i]);
-        */
+  console.log(inputArray);
   };
-/*
+
   //alert("Player 2: Guess the letters of the word by typing one letter at a time where it says 'Enter letter'");
 //when you click "submit" for enter letter input run displayLetters function
-$("#guess-letter").on("click", displayLetters);
+//$("#guess-letter").on("click", displayLetters);
+
+  /*  inputSplitValueArray = ['c', 'a', 'm', 'a', 'r', 'a']
+
+    function handleGuess(letter) {
+      var guessedLetter = letter
+      var checkedArray = []
+      for(var i=0; i < inputSplitValueArray.length; i++) {
+        if(inputSplitValueArray[i] == guessedLetter) {
+          checkedArray.push(guessedLetter)
+        } else {
+          checkedArray.push('-')
+        }
+      }
+      var output = checkedArray.join('')
+      console.log(output)
+    }
+*/
+
+/*
+
 function displayLetters(){
   //variable for input letter values
   var guessInput = $("#letter").val();
@@ -55,6 +62,4 @@ function displayLetters(){
       }
       }
     }
-  return false;
-}
 */
