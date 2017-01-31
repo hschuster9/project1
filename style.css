@@ -18,21 +18,17 @@ img {
 
 }
 
-
 .container {
   display: flex;
   justify-content: center;
   position: relative;
   color: white;
-
 }
 
 .hangman {
   border: 1px solid black;
   height: 500px;
   width: 600px;
-
-
 }
 
 .guesses{
@@ -61,6 +57,8 @@ img {
 #incorrect {
   color: white;
   text-align: center;
+  font-size: 40px;
+  font-family: 'Indie Flower', cursive;
 }
 
 #letterdashes {
@@ -72,7 +70,7 @@ img {
 #form1 {
   display: flex;
   justify-content: center;
-  margin-top: 10px;
+  margin-top: 40px;
 
 }
 #form2 {
@@ -86,7 +84,7 @@ img {
   height: 100px;
   width: 100%;
   border: 1px solid black;
-  margin-top: 0px;
+
 }
 h3 {
   text-align: center;
@@ -103,7 +101,6 @@ input {
   font-size: 20px;
 
 }
-
 
 button {
   font-size: 14px;
