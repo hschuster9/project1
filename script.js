@@ -1,33 +1,34 @@
 
-//alert("Player 1: Enter a word for Player 2 to guess where it says 'Enter word'");
-//when you click "submit" for enter word input run hideWord function
+alert("Player 1: Type a word for Player 2 to guess where it says, 'Enter word' then click 'Submit'");
 
 var checkedArray = [];
 var incorrectLetters = [];
-$("#set-word").on("click", hideWord);
+var wordArray = [];
+$("#set-word").on("click", enterWord);
 
-function hideWord () {
+function enterWord () {
+
   event.preventDefault();
+  $('.enter-words').toggle();
   //store word entered into variable
   var wordInput = $("#word").val();
   console.log(wordInput);
   //split the letters in word
-
   //put letters into array
   var wordInputSplitArray = wordInput.split("");
   console.log(wordInputSplitArray);
-
   //replace letters with dashes
   var wordArray = [];
   for( var i = 0; i < wordInputSplitArray.length; i++){
     checkedArray.push("-");
     wordArray.push("-");
-  }
+}
+
+  alert("Player 2: Guess the letters of the word by typing one letter at a time where it says 'Enter letter'");
 
   //display dashes on page
   $("#letterdashes").text(wordArray.join(' '));
 
-  console.log(wordArray);
 };
 
 //alert("Player 2: Guess the letters of the word by typing one letter at a time where it says 'Enter letter'");
@@ -40,7 +41,6 @@ function displayLetters(){
   var wordInputSplitArray = wordInput.split("");
   var guessedLetter = $("#letter").val();
   var image = [];
-    //  image[0] = '<img src="hangman1.jpeg">';
       image[1] = '<img src="hangman2.jpeg">';
       image[2] = '<img src="hangman3.jpeg">';
       image[3] = '<img src="hangman4.jpeg">';
@@ -49,20 +49,14 @@ function displayLetters(){
       image[6] = '<img src="hangman7.jpeg">';
   console.log(guessedLetter);
 
-  //create variable that stores current checkedArray
-
-  //Adrian's suggestion
-  // var currentCheckedArray = checkedArray;
-  // console.log(currentCheckedArray);
-
 var isMatched = false;
   for(var i = 0; i < wordInputSplitArray.length; i++){
     if(wordInputSplitArray[i] == guessedLetter) {
       checkedArray[i] = guessedLetter;
       console.log(checkedArray);
+      console.log(wordArray);
       isMatched = true;
-      console.log(`it's a match at index: ${i}`);
-
+      console.log(`it's a match at index: $[i]`);
     }
 
   }
@@ -71,8 +65,13 @@ var isMatched = false;
     incorrectLetters.push(guessedLetter);
     console.log(incorrectLetters);
 
-    var numberOfChances;
-    numberOfChances = image.length;
+    var numberOfChances = image.length - 1;
+    var numberofChancesLeft = numberOfChances--;
+    console.log(numberofChancesLeft);
+    console.log(numberOfChances);
+  if (wrongGuesses > numberOfChances) {
+    alert("game over");
+  }
 
     //image is an array of all images
     //define var for number of wrong guesses, aka incorrectLetters.length
@@ -88,3 +87,4 @@ var isMatched = false;
   $("#letterdashes").text(output);
   $("#incorrect").text(incorrectLetters);
 }
+;
