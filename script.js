@@ -1,5 +1,5 @@
 
-//alert("Player 1: Type a word for Player 2 to guess where it says, 'Enter word' then click 'Submit'");
+alert("Player 1: Type a word for Player 2 to guess where it says, 'Enter word' then click 'Submit'");
 $(".enter-letters").hide();
 var checkedArray = [];
 var incorrectLetters = [];
@@ -13,19 +13,20 @@ $("#set-word").on("click", enterWord);
     $(".enter-letters").show();
     //store word entered into variable
     var wordInput = $("#word").val();
-    console.log(wordInput);
 
     //split the letters in word and put letters into array
     var wordInputSplitArray = wordInput.split("");
     console.log(wordInputSplitArray);
     //replace letters with dashes
     var wordArray = [];
-    for( var i = 0; i < wordInputSplitArray.length; i++){
+    for (var i = 0; i < wordInputSplitArray.length; i++){
+      //array that will be checked when letters are entered in next function
       checkedArray.push("-");
+      //array that will be displayed on page initially
       wordArray.push("-");
         }
   //display dashes on page
-  $("#letterdashes").text(wordArray.join(' '));
+  $("#letterdashes").text(wordArray.join(""));
   //alert for player 2's turn
   alert("Player 2: Guess the letters of the word where it says, 'Enter letter'");
 };
@@ -45,9 +46,8 @@ function displayLetters(){
         image[4] = '<img src="images/hangman5.jpeg">';
         image[5] = '<img src="images/hangman6.jpeg">';
         image[6] = '<img src="images/hangman7.jpeg">';
-    console.log(guessedLetter);
 
-    //var to check to see if guess matches letter -> false for wrong
+    //var to check to see if guess matches letter
     var isMatched = false;
 
     //loop through word to find match
@@ -66,14 +66,12 @@ function displayLetters(){
           incorrectLetters.push(" " + guessedLetter);
           console.log(incorrectLetters);
 
-          //all images in array
-          var numberOfChances = image.length - 2;
-          console.log(numberOfChances);
+          var numberOfChances = 5;
 
           //define var for number of wrong guesses --> incorrectLetters.length
           var wrongGuesses = incorrectLetters.length;
           if (wrongGuesses > numberOfChances) {
-          alert("Game over");
+          alert("Game over. Player 1 wins!");
         }
           $('div .hangman').html(image[wrongGuesses]);
 
