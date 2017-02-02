@@ -6,6 +6,7 @@ body {
 h1 {
   text-align: center;
   font-family: 'Indie Flower', cursive;
+    /*if you set an html selector you would only have to use font-family once  or can create one selector for all elements that equal to the font family*/
   font-size: 50px;
   color: white;
 }
@@ -49,6 +50,7 @@ img {
   border: 1px solid black;
   margin: 60px 0px;
 }
+/*keep spaces within the closing bracket and beginning of next selector consistant, add a space */
 .enter-letters {
   position: relative;
   margin-top: 270px;

@@ -18,7 +18,7 @@ $("#set-word").on("click", enterWord);
     var wordInputSplitArray = wordInput.split("");
     console.log(wordInputSplitArray);
     //replace letters with dashes
-    var wordArray = [];
+    var wordArray = []; //I believe you don't need to enter this again as it was already initalized in the beginning
     for (var i = 0; i < wordInputSplitArray.length; i++){
       //array that will be checked when letters are entered in next function
       checkedArray.push("-");
@@ -29,7 +29,7 @@ $("#set-word").on("click", enterWord);
   $("#letterdashes").text(wordArray.join(""));
   //alert for player 2's turn
   alert("Player 2: Guess the letters of the word where it says, 'Enter letter'");
-};
+}; // don't need the semicolon here
 
 //when you click "submit" for enter letter input
 $("#guess-letter").on("click", displayLetters);
@@ -60,7 +60,7 @@ function displayLetters(){
 
       }
         //incorrect guess
-        if (isMatched == false){
+        if (isMatched == false){  //can you try using an if elseif statement for the incorect guesses?
 
           //pushes guessed letter to display in incorrect letters
           incorrectLetters.push(" " + guessedLetter);
